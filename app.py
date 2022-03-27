@@ -17,4 +17,9 @@ driver=webdriver.Chrome(service=Service(executable_path=os.environ.get("CHROMEDR
 app=Flask(__name__)
 
 @app.route('/')
-def home()
+def home():
+  return render_template("home.html")
+
+if __name__=="__main__":
+  app.run()
+ 
