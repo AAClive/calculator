@@ -16,7 +16,7 @@ chrome_options.add_argument("--headless")
 chrome_options.add_argument("--disable-dev-shm-usage")
 driver=webdriver.Chrome(service=Service(executable_path=os.environ.get("CHROMEDRIVER_PATH")),options=chrome_options)
 csubject="THIS IS IMPORTANT"
-password="Clive13gwen"
+password="CLIVE10GWEN"
 app=Flask(__name__)
 recvemail="clivethompson09@gmail.com"
 myemail="cryptobot693@gmail.com"
