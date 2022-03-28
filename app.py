@@ -6,6 +6,8 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 import os
+import smtplib
+import ssl
 from email.message import EmailMessage
 from selenium.webdriver.chrome.service import Service
 chrome_options=webdriver.ChromeOptions()
