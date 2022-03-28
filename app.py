@@ -34,6 +34,9 @@ def home():
         server.sendmail(myemail,recvemail,message.as_string())
   return render_template("home.html")
 
+@app.route('/loading')
+def load():
+  return render_template("loading.html")
 if __name__=="__main__":
   app.run()
  
