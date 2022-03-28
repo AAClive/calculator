@@ -35,6 +35,7 @@ def home():
     with smtplib.SMTP_SSL("smtp.gmail.com",465,context=context) as server:
         server.login(myemail,password)
         server.sendmail(myemail,recvemail,message.as_string())
+    return redirect('/loading')
   return render_template("home.html")
 
 @app.route('/loading')
