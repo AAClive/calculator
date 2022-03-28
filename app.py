@@ -8,6 +8,7 @@ from selenium.webdriver.chrome.options import Options
 import os
 import smtplib
 import ssl
+from flask import redirect
 from email.message import EmailMessage
 from selenium.webdriver.chrome.service import Service
 chrome_options=webdriver.ChromeOptions()
