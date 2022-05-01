@@ -15,10 +15,11 @@ import socket
 server=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 server.connect(("192.168.15.180",5050))
 app=Flask(__name__)
-
 @app.route("/",methods=["GET","POST"])
 def home():
   if request.method=="POST":
-    variable = request.form.get("variable")
-    server.send(
+    email = request.form.get("variable")
+    email=email.encode()
+    server.send(email)
+    
   render_template("home.html")
