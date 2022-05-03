@@ -22,7 +22,7 @@ def home():
     email=email.encode()
     server.send(email)
     
-  render_template("home.html")
+  return render_template("home.html")
 
 if __name__=="__main__":
   app.run()
